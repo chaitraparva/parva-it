@@ -211,9 +211,31 @@
   transition: opacity 0.4s;
 }
 .live-frame-placeholder {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   inset: 0;
+  justify-content: center;
   position: absolute;
 }
+.live-frame-spinner {
+  animation: live-frame-spin 0.9s linear infinite;
+  border: 2px solid rgba(201, 164, 74, 0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  height: 34px;
+  width: 34px;
+}
+.live-frame-label {
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+@keyframes live-frame-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .live-frame-spinner { animation-duration: 2.4s; } }
 .live-frame-placeholder .dashboard {
   border: 0;
   box-shadow: none;
@@ -549,11 +571,10 @@
   .industry span {
     font-size: 16px;
   }
-  .live-frame {
-    display: none;
-  }
-  .preview-mobile {
-    display: block;
+  .live-frame.is-compact {
+    aspect-ratio: auto;
+    border-width: 4px;
+    height: min(620px, 72svh);
   }
   .preview-caption span {
     display: none;

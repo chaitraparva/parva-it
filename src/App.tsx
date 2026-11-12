@@ -308,13 +308,21 @@ function DashboardPreview({
 function LiveDemoFrame({ product }: { product: (typeof products)[number] }) {
   const wrap = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0);
+  const [compact, setCompact] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const DESIGN_WIDTH = 1280;
+  // Below this width the demo runs at the phone's own width (the demos are responsive),
+  // instead of a tiny scaled-down desktop view.
+  const COMPACT_BELOW = 760;
 
   useEffect(() => {
     const el = wrap.current;
     if (!el) return;
-    const measure = () => setScale(el.clientWidth / DESIGN_WIDTH);
+    const measure = () => {
+      const isCompact = window.innerWidth < COMPACT_BELOW;
+      setCompact(isCompact);
+      setScale(isCompact ? 1 : el.clientWidth / DESIGN_WIDTH);
+    };
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(el);
@@ -322,10 +330,11 @@ function LiveDemoFrame({ product }: { product: (typeof products)[number] }) {
   }, []);
 
   return (
-    <div className="live-frame" ref={wrap}>
+    <div className={`live-frame${compact ? " is-compact" : ""}`} ref={wrap}>
       {!loaded && (
-        <div className="live-frame-placeholder">
-          <DashboardPreview product={product} />
+        <div className="live-frame-placeholder" role="status">
+          <span className="live-frame-spinner" aria-hidden="true" />
+          <span className="live-frame-label">Loading live demo…</span>
         </div>
       )}
       {scale > 0 && (
@@ -334,12 +343,11 @@ function LiveDemoFrame({ product }: { product: (typeof products)[number] }) {
           src={product.demoUrl}
           loading="lazy"
           onLoad={() => setLoaded(true)}
-          style={{
-            width: DESIGN_WIDTH,
-            height: 800,
-            transform: `scale(${scale})`,
-            opacity: loaded ? 1 : 0,
-          }}
+          style={
+            compact
+              ? { width: "100%", height: "100%", opacity: loaded ? 1 : 0 }
+              : { width: DESIGN_WIDTH, height: 800, transform: `scale(${scale})`, opacity: loaded ? 1 : 0 }
+          }
         />
       )}
     </div>
@@ -690,9 +698,6 @@ export default function App() {
               </a>
             </div>
             <LiveDemoFrame product={product} key={product.id} />
-            <div className="preview-mobile">
-              <DashboardPreview product={product} />
-            </div>
           </div>
         </div>
 
