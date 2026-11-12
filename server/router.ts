@@ -1,4 +1,4 @@
-// One router for every /api/* endpoint. Used by the Vercel function (api/[...path].ts)
+// One router for every /api/* endpoint. Used by the Vercel function (api/index.ts)
 // and by the local dev server (server/dev.ts).
 import { db, HttpError, readJson, sendJson, clientIp, isProd, type Ctx, type Req, type Res } from './core.js'
 import {
