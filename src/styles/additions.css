@@ -600,17 +600,19 @@
 /* Header: small team sign-in link beside the main call to action */
 .header-end { align-items: center; display: flex; gap: 26px; justify-self: end; }
 .nav-signin {
-  border: 1px solid rgba(201, 164, 74, 0.35);
-  color: var(--cream);
-  font-family: "DM Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  padding: 7px 12px;
+  align-items: center;
+  border: 1px solid rgba(201, 164, 74, 0.45);
+  border-radius: 50%;
+  color: var(--gold);
+  display: inline-flex;
+  flex: none;
+  height: 38px;
+  justify-content: center;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+  width: 38px;
 }
-.nav-signin:hover, .nav-signin:focus-visible { border-color: var(--gold); color: var(--gold-light); }
+.nav-signin:hover, .nav-signin:focus-visible { background: rgba(201, 164, 74, 0.1); border-color: var(--gold); color: var(--gold-light); }
 .mobile-signin {
   color: var(--gold-light) !important;
   font-family: "DM Mono", monospace !important;
@@ -666,5 +668,5 @@
 @media (max-width: 1200px) { .header-end .nav-cta { display: none; } }
 @media (max-width: 760px) {
   .header-end { margin-left: auto; margin-right: 16px; }
-  .nav-signin { font-size: 10px; padding: 6px 10px; }
+  .nav-signin { height: 34px; width: 34px; }
 }

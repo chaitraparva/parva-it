@@ -72,4 +72,4 @@ New, Contacted, Interested, Meeting Scheduled, Proposal Sent, Negotiation, Conve
 
 ## Package manager
 
-Dependencies were installed with npm (`package-lock.json`). `pnpm-lock.yaml` from the original project has not been updated; delete it or run `pnpm install` if you prefer pnpm.
+This project uses npm (`package-lock.json`). Vercel picks the package manager from the lock file, so do not add a `pnpm-lock.yaml` or `yarn.lock`.

@@ -426,7 +426,12 @@ export default function App() {
           ))}
         </nav>
         <div className="header-end">
-          <a className="nav-signin" href="/admin/login">Sign in</a>
+          <a className="nav-signin" href="/admin/login" aria-label="Admin sign in" title="Admin sign in">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="5" y="11" width="14" height="10" rx="1.5" />
+              <path d="M8 11V7.5a4 4 0 0 1 8 0V11" />
+            </svg>
+          </a>
           <button className="nav-cta" onClick={() => openInquiry()}>
             Discuss your project <Icon name="arrow" size={17} />
           </button>

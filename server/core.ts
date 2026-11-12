@@ -4,7 +4,7 @@ import crypto from 'node:crypto'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 
 // Return DATE columns as plain 'YYYY-MM-DD' strings (no timezone shifting).
-pg.types.setTypeParser(1082, (v) => v)
+pg.types.setTypeParser(1082, (v: string) => v)
 
 let pool: pg.Pool | null = null
 export function db(): pg.Pool {
