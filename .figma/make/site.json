@@ -1,0 +1,11 @@
+{
+  "description": "Parva IT designs and develops custom websites, CRM, HRMS, portfolio management systems, dashboards and business applications built around each client\u2019s requirements.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  },
+  "title": "Parva IT \u2014 Custom Software Development & IT Solutions"
+}

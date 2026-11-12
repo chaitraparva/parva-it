@@ -1,0 +1,670 @@
+/* Additions for the corporate website update. The original styles in src/index.css are
+   kept as they were; everything new or adjusted lives here. */
+
+/* Slightly larger micro-labels for readability */
+.section-label,
+.eyebrow {
+  font-size: 10px;
+}
+.preview-caption,
+.product-result span,
+.cap-number,
+.journey-step > span {
+  font-size: 9px;
+}
+
+/* Hero: the longer headline needs a smaller display size */
+.hero h1.hero-title-long {
+  font-size: clamp(44px, 4.6vw, 76px);
+  line-height: 1.02;
+}
+.hero-actions button.outline-button {
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.console-label {
+  font-size: 8px;
+}
+
+/* About */
+.about {
+  background: var(--black);
+  padding: 125px 5vw;
+}
+.about-intro h2,
+.services-head h2,
+.problems-intro h2,
+.industries-head h2,
+.contact-copy h2 {
+  font-family: "Cinzel";
+  font-size: clamp(36px, 4vw, 62px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin-top: 24px;
+}
+.about-grid {
+  border-top: 1px solid rgba(201, 164, 74, 0.18);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 70px;
+}
+.about-item {
+  border-right: 1px solid rgba(201, 164, 74, 0.12);
+  padding: 30px 26px 10px 0;
+}
+.about-item + .about-item {
+  padding-left: 26px;
+}
+.about-item:last-child {
+  border-right: 0;
+}
+.about-item > span {
+  color: var(--gold);
+  font-family: "DM Mono";
+  font-size: 9px;
+}
+.about-item h3 {
+  font-family: "Playfair Display";
+  font-size: 23px;
+  font-weight: 500;
+  margin: 18px 0 12px;
+}
+.about-item p {
+  color: #9b968d;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+/* What we do: nine services */
+.services-head {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 115px 5vw 60px;
+}
+.services-head h2 em,
+.journey h2 em,
+.industries-head h2 em {
+  color: #7b5f25;
+}
+.capabilities.capabilities-nine {
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 0;
+}
+.capabilities-nine .capability {
+  border-bottom: 1px solid #d4cfc4;
+  border-right: 0;
+  min-height: 290px;
+}
+.capabilities-nine .capability:nth-child(3n) {
+  border-right: 1px solid #d4cfc4;
+}
+.capabilities-nine .capability:nth-child(-n + 3) {
+  border-top: 1px solid #d4cfc4;
+}
+.capabilities-nine .cap-icon {
+  margin: 34px 0 26px;
+}
+.capabilities-nine .capability h3 {
+  font-size: 23px;
+}
+.capabilities-nine .capability p {
+  max-width: 300px;
+}
+
+/* Problems we solve */
+.problems {
+  background: var(--black-2);
+  display: grid;
+  gap: 8vw;
+  grid-template-columns: 0.8fr 1.2fr;
+  padding: 125px 5vw;
+}
+.problem-list {
+  border-top: 1px solid rgba(201, 164, 74, 0.18);
+}
+.problem-row {
+  align-items: center;
+  border-bottom: 1px solid rgba(201, 164, 74, 0.18);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr 24px 1fr;
+  padding: 26px 0;
+}
+.problem-row span {
+  color: #77736b;
+  display: block;
+  font-family: "DM Mono";
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.problem-row > div:last-child span {
+  color: var(--gold);
+}
+.problem-row h3 {
+  font-family: "Playfair Display";
+  font-size: 21px;
+  font-weight: 500;
+}
+.problem-row p {
+  color: #c9c4b9;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.problem-row > svg {
+  color: var(--gold);
+}
+
+/* Portfolio */
+.product-tabs small {
+  font-size: 9px;
+}
+.project-brief {
+  display: grid;
+  gap: 18px;
+  margin: 26px 0 30px;
+}
+.project-brief span {
+  color: var(--gold);
+  font-family: "DM Mono";
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+.project-brief p {
+  color: #a9a49a;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  margin-top: 7px;
+  max-width: 470px;
+}
+.watch-button {
+  font-size: 11px;
+}
+.preview-caption a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+.preview-caption a:hover {
+  text-decoration: underline;
+}
+.live-frame {
+  aspect-ratio: 1280 / 800;
+  background: #11110f;
+  border: 7px solid #1c1c1a;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+.live-frame iframe {
+  background: #fff;
+  border: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 0 0;
+  transition: opacity 0.4s;
+}
+.live-frame-placeholder {
+  inset: 0;
+  position: absolute;
+}
+.live-frame-placeholder .dashboard {
+  border: 0;
+  box-shadow: none;
+  height: 100%;
+  min-height: 0;
+}
+.preview-mobile {
+  display: none;
+}
+.project-details {
+  animation: fade-up 0.55s both;
+  border-top: 1px solid rgba(201, 164, 74, 0.16);
+  display: grid;
+  gap: 7vw;
+  grid-template-columns: 1.28fr 0.72fr;
+  margin-top: 70px;
+  padding-top: 50px;
+}
+.feature-list {
+  display: grid;
+  gap: 12px 34px;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+.feature-list li {
+  color: #c9c4b9;
+  display: grid;
+  font-size: 13px;
+  font-weight: 300;
+  gap: 12px;
+  grid-template-columns: 16px 1fr;
+  line-height: 1.6;
+}
+.feature-list svg {
+  color: var(--gold);
+  margin-top: 3px;
+}
+.stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 6px;
+}
+.stack-tags span {
+  border: 1px solid rgba(201, 164, 74, 0.3);
+  color: var(--gold-light);
+  font-family: "DM Mono";
+  font-size: 10px;
+  padding: 6px 10px;
+}
+.project-details .product-result strong {
+  font-family: "Outfit";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.demo-note {
+  color: #77736b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Live demo modal (re-uses the walkthrough modal) */
+.demo-modal {
+  max-width: 1280px;
+  padding: 40px 32px 28px;
+}
+.demo-modal-frame {
+  background: #fff;
+  border: 1px solid rgba(201, 164, 74, 0.25);
+  display: block;
+  height: min(70vh, 760px);
+  width: 100%;
+}
+.demo-modal-actions {
+  display: flex;
+  gap: 12px;
+}
+.demo-modal-actions .outline-button {
+  gap: 12px;
+}
+
+/* Process */
+.journey-cta {
+  margin-top: 34px;
+}
+.journey-step {
+  padding: 22px 0;
+}
+
+/* Industries */
+.industries {
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  gap: 8vw;
+  grid-template-columns: 0.8fr 1.2fr;
+  padding: 125px 5vw;
+}
+.industries-head > p:last-child {
+  color: #716c64;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-top: 26px;
+  max-width: 430px;
+}
+.industry-grid {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.industry {
+  align-items: flex-start;
+  border: 1px solid #d4cfc4;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0 -1px -1px 0;
+  min-height: 150px;
+  padding: 22px;
+  transition: background 0.3s, color 0.3s;
+}
+.industry svg {
+  color: #7b5f25;
+}
+.industry span {
+  font-family: "Playfair Display";
+  font-size: 19px;
+}
+.industry:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+.industry:hover svg {
+  color: var(--gold-light);
+}
+
+/* Contact */
+.contact {
+  background: var(--black);
+  display: grid;
+  gap: 7vw;
+  grid-template-columns: 0.8fr 1.2fr;
+  padding: 125px 5vw;
+}
+.contact-copy > p:not(.section-label) {
+  color: #9b968d;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 26px 0;
+  max-width: 440px;
+}
+.contact-points {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+.contact-points li {
+  align-items: center;
+  color: #c9c4b9;
+  display: flex;
+  font-size: 13px;
+  gap: 12px;
+}
+.contact-points svg {
+  color: var(--gold);
+}
+.inquiry-modal.contact-card {
+  max-height: none;
+  max-width: none;
+  overflow: visible;
+}
+
+/* Inquiry form */
+.inquiry-modal label {
+  font-size: 9px;
+}
+.inquiry-modal input[aria-invalid],
+.inquiry-modal select[aria-invalid],
+.inquiry-modal textarea[aria-invalid] {
+  border-color: #b4412f;
+}
+.inquiry-modal select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #7b5f25 50%), linear-gradient(135deg, #7b5f25 50%, transparent 50%);
+  background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+  background-repeat: no-repeat;
+  background-size: 5px 5px;
+  padding-right: 36px;
+}
+.field-error {
+  color: #a3361f;
+  font-family: "Outfit";
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.hp-field {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+.form-context {
+  color: #6b665e;
+  font-size: 12px;
+}
+.form-message {
+  background: #efe6cf;
+  color: #5c4a2e;
+  font-size: 13px;
+  padding: 12px 14px;
+}
+.form-message.is-error {
+  background: #f4dcd6;
+  color: #8a2a17;
+}
+.inquiry-modal form .gold-button[disabled] {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+.success-state h2 {
+  font-family: "Playfair Display";
+  font-size: 38px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-item,
+  .about-item + .about-item {
+    border-right: 0;
+    border-bottom: 1px solid rgba(201, 164, 74, 0.12);
+    padding: 26px 26px 26px 0;
+  }
+  .capabilities.capabilities-nine {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .capabilities-nine .capability:nth-child(n) {
+    border-right: 0;
+    border-top: 0;
+  }
+  .capabilities-nine .capability:nth-child(-n + 2) {
+    border-top: 1px solid #d4cfc4;
+  }
+  .capabilities-nine .capability:nth-child(2n) {
+    border-right: 1px solid #d4cfc4;
+  }
+  .capabilities-nine .capability:last-child {
+    border-right: 1px solid #d4cfc4;
+  }
+  .problems,
+  .industries,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-showcase {
+    grid-template-columns: 1fr;
+  }
+  .project-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phone */
+@media (max-width: 760px) {
+  .about,
+  .problems,
+  .industries,
+  .contact {
+    padding: 85px 21px;
+  }
+  .services-head {
+    padding: 80px 21px 40px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+  .capabilities.capabilities-nine {
+    grid-template-columns: 1fr;
+  }
+  .capabilities-nine .capability:nth-child(n) {
+    border-left: 1px solid #d4cfc4;
+    border-right: 1px solid #d4cfc4;
+    border-top: 0;
+    min-height: 0;
+    padding-bottom: 32px;
+  }
+  .capabilities-nine .capability:first-child {
+    border-top: 1px solid #d4cfc4;
+  }
+  .hero h1.hero-title-long {
+    font-size: 10.5vw;
+  }
+  .hero-actions .gold-button,
+  .hero-actions .outline-button {
+    justify-content: space-between;
+  }
+  .problem-row {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+  .problem-row > svg {
+    transform: rotate(90deg);
+  }
+  .industry-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .industry {
+    gap: 22px;
+    min-height: 120px;
+    padding: 16px;
+  }
+  .industry span {
+    font-size: 16px;
+  }
+  .live-frame {
+    display: none;
+  }
+  .preview-mobile {
+    display: block;
+  }
+  .preview-caption span {
+    display: none;
+  }
+  .preview-caption {
+    justify-content: flex-end;
+  }
+  .product-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .watch-button {
+    font-size: 11px;
+  }
+  .watch-button:after {
+    content: none;
+  }
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+  .project-details {
+    margin-top: 45px;
+    padding-top: 35px;
+  }
+  .demo-modal {
+    padding: 44px 10px 16px;
+  }
+  .demo-modal-frame {
+    height: 68vh;
+  }
+  .demo-modal-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact .inquiry-modal.contact-card {
+    padding: 30px 18px;
+  }
+}
+
+/* Logo mark (P in code brackets) inside the existing emblem box */
+.brand-emblem { border-color: transparent; box-shadow: none; background: transparent; }
+.brand-emblem .brand-mark { display: block; width: 34px; height: 34px; }
+
+/* Header: small team sign-in link beside the main call to action */
+.header-end { align-items: center; display: flex; gap: 26px; justify-self: end; }
+.nav-signin {
+  border: 1px solid rgba(201, 164, 74, 0.35);
+  color: var(--cream);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  padding: 7px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+.nav-signin:hover, .nav-signin:focus-visible { border-color: var(--gold); color: var(--gold-light); }
+.mobile-signin {
+  color: var(--gold-light) !important;
+  font-family: "DM Mono", monospace !important;
+  font-size: 13px !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Hero: the four portfolio projects in place of the old animated circle */
+.hero-work {
+  align-self: center;
+  border: 1px solid rgba(201, 164, 74, 0.22);
+  background: rgba(13, 13, 12, 0.72);
+  display: grid;
+  justify-self: end;
+  margin-left: 6vw;
+  max-width: 460px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.hero-work-label {
+  border-bottom: 1px solid rgba(201, 164, 74, 0.18);
+  color: var(--gold);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  margin: 0;
+  padding: 18px 24px;
+}
+.hero-work-item {
+  align-items: center;
+  border-bottom: 1px solid rgba(201, 164, 74, 0.12);
+  color: var(--cream);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 30px 1fr auto;
+  padding: 22px 24px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.hero-work-item:last-child { border-bottom: 0; }
+.hero-work-item span { color: var(--gold); font-family: "DM Mono", monospace; font-size: 12px; }
+.hero-work-item strong { font-family: "Cinzel", serif; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; }
+.hero-work-item svg { color: var(--gold); transition: transform 0.2s; }
+.hero-work-item:hover, .hero-work-item:focus-visible { background: rgba(201, 164, 74, 0.08); color: var(--gold-light); }
+.hero-work-item:hover svg { transform: translateX(4px); }
+@media (max-width: 1050px) {
+  .hero-work { justify-self: stretch; margin: 48px 0 0; max-width: none; }
+}
+
+/* Keep the team sign-in visible at every width */
+@media (max-width: 1200px) { .header-end .nav-cta { display: none; } }
+@media (max-width: 760px) {
+  .header-end { margin-left: auto; margin-right: 16px; }
+  .nav-signin { font-size: 10px; padding: 6px 10px; }
+}
