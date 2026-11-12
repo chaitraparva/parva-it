@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Parva IT website and lead admin
 
 The public Parva IT website, the inquiry form, and the admin portal for managing leads.
@@ -74,7 +73,3 @@ New, Contacted, Interested, Meeting Scheduled, Proposal Sent, Negotiation, Conve
 ## Package manager
 
 Dependencies were installed with npm (`package-lock.json`). `pnpm-lock.yaml` from the original project has not been updated; delete it or run `pnpm install` if you prefer pnpm.
-=======
-# parva-it
-website
->>>>>>> 9a6e006645b804f9a65b52d081ef1380a1fb426d
