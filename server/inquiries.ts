@@ -1,8 +1,8 @@
 // Public inquiry form → lead. Server-side validation, honeypot, per-IP rate limit and
 // duplicate protection (idempotency key + same content within 10 minutes).
-import { db, HttpError, ipHash, readJson, sha256, type Ctx } from './core'
-import { validateInquiry } from './validate'
-import { sendMail, esc, siteUrl } from './mail'
+import { db, HttpError, ipHash, readJson, sha256, type Ctx } from './core.js'
+import { validateInquiry } from './validate.js'
+import { sendMail, esc, siteUrl } from './mail.js'
 
 const RATE_LIMIT = Number(process.env.INQUIRY_RATE_LIMIT || 5) // per IP per 10 minutes
 

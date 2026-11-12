@@ -1,8 +1,8 @@
 // Creates or updates the database tables: `npm run db:migrate`
 import fs from 'node:fs'
 import path from 'node:path'
-import { loadEnv } from '../server/env'
-import { db } from '../server/core'
+import { loadEnv } from '../server/env.js'
+import { db } from '../server/core.js'
 
 loadEnv()
 const sql = fs.readFileSync(path.resolve(process.cwd(), 'db/schema.sql'), 'utf8')

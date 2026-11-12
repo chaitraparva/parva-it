@@ -1,9 +1,9 @@
 // Admin lead management: dashboard stats, list/search/filter, detail, edits with history,
 // notes, follow-ups and CSV export.
-import { db, HttpError, readJson, type Ctx } from './core'
-import type { Admin } from './auth'
-import { validDate, validStatus, EMAIL_RE } from './validate'
-import { QUALIFIED_STATUSES, LEAD_SOURCES, INDUSTRIES, REQUIREMENTS, BUDGETS, PROJECT_INTERESTS } from '../src/lib/options'
+import { db, HttpError, readJson, type Ctx } from './core.js'
+import type { Admin } from './auth.js'
+import { validDate, validStatus, EMAIL_RE } from './validate.js'
+import { QUALIFIED_STATUSES, LEAD_SOURCES, INDUSTRIES, REQUIREMENTS, BUDGETS, PROJECT_INTERESTS } from '../src/lib/options.js'
 
 export async function dashboard() {
   const q = (sql: string, params: unknown[] = []) => db().query(sql, params).then((r) => r.rows)

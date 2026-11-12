@@ -1,8 +1,8 @@
 // Admin authentication: bcrypt passwords, opaque session tokens in an httpOnly cookie,
 // sessions stored hashed in the database, login rate limiting and role checks.
 import bcrypt from 'bcryptjs'
-import { db, HttpError, parseCookies, randomToken, sha256, isProd, type Ctx } from './core'
-import type { Role } from '../src/lib/options'
+import { db, HttpError, parseCookies, randomToken, sha256, isProd, type Ctx } from './core.js'
+import type { Role } from '../src/lib/options.js'
 
 export const SESSION_COOKIE = 'pit_admin_session'
 const SESSION_HOURS = Number(process.env.SESSION_HOURS || 12)

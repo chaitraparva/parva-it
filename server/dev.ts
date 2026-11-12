@@ -3,8 +3,8 @@
 import http from 'node:http'
 import fs from 'node:fs'
 import path from 'node:path'
-import { loadEnv } from './env'
-import { handle } from './router'
+import { loadEnv } from './env.js'
+import { handle } from './router.js'
 
 loadEnv()
 const port = Number(process.env.API_PORT || 3001)

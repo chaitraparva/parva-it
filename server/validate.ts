@@ -1,7 +1,7 @@
 // Server-side validation for the public inquiry form. The browser runs the same rules
 // (src/lib/inquiry.ts) for instant feedback, but this is the source of truth.
-import { HttpError } from './core'
-import { INDUSTRIES, REQUIREMENTS, BUDGETS, PROJECT_INTERESTS, LEAD_STATUSES } from '../src/lib/options'
+import { HttpError } from './core.js'
+import { INDUSTRIES, REQUIREMENTS, BUDGETS, PROJECT_INTERESTS, LEAD_STATUSES } from '../src/lib/options.js'
 
 export interface InquiryInput {
   fullName: string

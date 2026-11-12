@@ -2,10 +2,10 @@
 //   npm run admin:create -- --email you@parvait.com --name "Your Name" [--role super_admin]
 // The password is read from the ADMIN_PASSWORD env var, or asked for interactively.
 import readline from 'node:readline/promises'
-import { loadEnv } from '../server/env'
-import { db } from '../server/core'
-import { hashPassword, checkPasswordStrength } from '../server/auth'
-import { ROLES } from '../src/lib/options'
+import { loadEnv } from '../server/env.js'
+import { db } from '../server/core.js'
+import { hashPassword, checkPasswordStrength } from '../server/auth.js'
+import { ROLES } from '../src/lib/options.js'
 
 loadEnv()
 const arg = (name: string) => {

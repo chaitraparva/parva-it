@@ -1,14 +1,14 @@
 // One router for every /api/* endpoint. Used by the Vercel function (api/[...path].ts)
 // and by the local dev server (server/dev.ts).
-import { db, HttpError, readJson, sendJson, clientIp, isProd, type Ctx, type Req, type Res } from './core'
+import { db, HttpError, readJson, sendJson, clientIp, isProd, type Ctx, type Req, type Res } from './core.js'
 import {
   login, logout, currentAdmin, requireAdmin, createPasswordReset, resetPassword, hashPassword, checkPasswordStrength,
-} from './auth'
-import { createInquiry } from './inquiries'
-import { dashboard, listLeads, getLead, updateLead, addNote, exportLeads, createManualLead } from './leads'
-import { sendMail, mailConfigured, siteUrl, esc } from './mail'
-import { ROLES, type Role } from '../src/lib/options'
-import { EMAIL_RE } from './validate'
+} from './auth.js'
+import { createInquiry } from './inquiries.js'
+import { dashboard, listLeads, getLead, updateLead, addNote, exportLeads, createManualLead } from './leads.js'
+import { sendMail, mailConfigured, siteUrl, esc } from './mail.js'
+import { ROLES, type Role } from '../src/lib/options.js'
+import { EMAIL_RE } from './validate.js'
 
 type Handler = (ctx: Ctx, params: string[]) => Promise<unknown>
 const routes: [string, RegExp, Handler][] = []
