@@ -309,11 +309,13 @@ function LiveDemoFrame({ product }: { product: (typeof products)[number] }) {
   const wrap = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0);
   const [compact, setCompact] = useState(false);
+  const [frameHeight, setFrameHeight] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const DESIGN_WIDTH = 1280;
-  // Below this width the demo runs at the phone's own width (the demos are responsive),
-  // instead of a tiny scaled-down desktop view.
+  // On phones the demo runs at a standard phone width (the demos are responsive) and is
+  // scaled to fit, instead of showing a tiny scaled-down desktop view.
   const COMPACT_BELOW = 760;
+  const PHONE_WIDTH = 390;
 
   useEffect(() => {
     const el = wrap.current;
@@ -321,7 +323,8 @@ function LiveDemoFrame({ product }: { product: (typeof products)[number] }) {
     const measure = () => {
       const isCompact = window.innerWidth < COMPACT_BELOW;
       setCompact(isCompact);
-      setScale(isCompact ? 1 : el.clientWidth / DESIGN_WIDTH);
+      setFrameHeight(el.clientHeight);
+      setScale(el.clientWidth / (isCompact ? PHONE_WIDTH : DESIGN_WIDTH));
     };
     measure();
     const ro = new ResizeObserver(measure);
@@ -345,7 +348,7 @@ function LiveDemoFrame({ product }: { product: (typeof products)[number] }) {
           onLoad={() => setLoaded(true)}
           style={
             compact
-              ? { width: "100%", height: "100%", opacity: loaded ? 1 : 0 }
+              ? { width: PHONE_WIDTH, height: frameHeight / scale, transform: `scale(${scale})`, opacity: loaded ? 1 : 0 }
               : { width: DESIGN_WIDTH, height: 800, transform: `scale(${scale})`, opacity: loaded ? 1 : 0 }
           }
         />
